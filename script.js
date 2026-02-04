@@ -12,6 +12,7 @@ function moveButton() {
     // Set the button's new position
     noButton.style.left = x + 'px';
     noButton.style.top = y + 'px';
+    noButton.style.transform = 'none';
 
     fontSize += 10; 
     yesButton.style.fontSize = fontSize + 'px';

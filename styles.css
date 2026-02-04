@@ -7,25 +7,41 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #ffe6e6; /* Soft pink */
-    font-family: 'Arial', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     overflow: hidden; /* Prevents scrollbars if button moves off-screen */
 }
 
 h1 {
     color: #d63384;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 2.25rem;
+    letter-spacing: 0.02em;
 }
 
 .container {
+    color: plum;
     text-align: center;
+}
+
+#button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    position: relative;
+    min-height: 54px;
 }
 
 button {
     padding: 15px 30px;
     font-size: 18px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
     cursor: pointer;
     border-radius: 10px;
     border: none;
-    margin: 10px;
     transition: transform 0.2s;
 }
 
@@ -37,5 +53,8 @@ button {
 #noButton {
     background-color: #888;
     color: white;
-    position: absolute; /* This allows us to move it anywhere */
+    position: absolute;
+    left: 50%;
+    transform: translate(60px, -50%);
+    top: 50%;
 }
