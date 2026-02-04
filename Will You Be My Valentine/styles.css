@@ -1,0 +1,41 @@
+/* CSS: Making it look pretty */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ffe6e6; /* Soft pink */
+    font-family: 'Arial', sans-serif;
+    overflow: hidden; /* Prevents scrollbars if button moves off-screen */
+}
+
+h1 {
+    color: #d63384;
+}
+
+.container {
+    text-align: center;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    margin: 10px;
+    transition: transform 0.2s;
+}
+
+#yesButton {
+    background-color: #ff4d6d;
+    color: white;
+}
+
+#noButton {
+    background-color: #888;
+    color: white;
+    position: absolute; /* This allows us to move it anywhere */
+}
