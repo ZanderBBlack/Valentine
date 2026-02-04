@@ -56,7 +56,7 @@ function handleYes() {
              style="border-radius: 20px; border: none; max-width: 100%; height: auto;" 
              width="400">
         <h1 style="color: #ae1662; margin-top: 20px;">Yippee! I knew you'd say yes!</h1>
-        <p style="color: #ae1662; font-family: 'Quicksand', sans-serif; font-size: 1.5rem; font-weight: 500;">
+        <p style="color: #ffacdf; font-family: 'Quicksand', sans-serif; font-size: 1.5rem; font-weight: 500;">
             I'll see you on the 14th muhahaha!!!
         </p>
     `;
