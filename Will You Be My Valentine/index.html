@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Be My Valentine?</title>
+    <style>
+        /* CSS: Making it look pretty */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffe6e6; /* Soft pink */
+            font-family: 'Arial', sans-serif;
+            overflow: hidden; /* Prevents scrollbars if button moves off-screen */
+        }
+
+        h1 {
+            color: #d63384;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 10px;
+            border: none;
+            margin: 10px;
+            transition: transform 0.2s;
+        }
+
+        #yesButton {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        #noButton {
+            background-color: #888;
+            color: white;
+            position: absolute; /* This allows us to move it anywhere */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHp1eHByZ3BqZ3BqZ3BqZ3BqZ3BqZ3BqZ3BqZ3BqZ3BqZ3BqJmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/KztT2c4u8mYYUiMKdJ/giphy.gif" alt="Cute Cat" width="200">
+        <h1>Will you be my Valentine?</h1>
+        
+        <div id="button-group">
+            <button id="yesButton" onclick="handleYes()">Yes</button>
+            <button id="noButton" onmouseover="moveButton()">No</button>
+        </div>
+    </div>
+
+    <script>
+        // JS: The Brains
+        let fontSize = 18;
+        function moveButton() {
+            const noButton = document.getElementById('noButton');
+            const yesButton = document.getElementById('yesButton');
+            
+            // Calculate new random coordinates
+            // window.innerWidth is the width of the browser screen
+            const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+            
+            // Set the button's new position
+            noButton.style.left = x + 'px';
+            noButton.style.top = y + 'px';
+
+            fontSize += 10; 
+            yesButton.style.fontSize = fontSize + 'px';
+            yesButton.style.padding = (fontSize/1.2) + 'px ' + (fontSize*1.5) + 'px';
+
+        }
+
+        function handleYes() {
+            alert("Yay! Can't wait! ❤️");
+            // You can also redirect to a new page or change the text here
+            document.querySelector('.container').innerHTML = "<h1>See you on the 14th! 🥰</h1>";
+        }
+    </script>
+
+</body>
+</html>
