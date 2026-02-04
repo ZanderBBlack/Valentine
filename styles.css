@@ -6,55 +6,116 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
-    background-color: #ffe6e6; /* Soft pink */
+    background-color: #d63384; /* Soft pink */
     font-family: 'Quicksand', sans-serif;
     overflow: hidden; /* Prevents scrollbars if button moves off-screen */
 }
 
 h1 {
-    color: #d63384;
-    font-family: 'Playfair Display', serif;
+    color: #ae1662;
     font-weight: 600;
     font-size: 2.25rem;
     letter-spacing: 0.02em;
 }
 
 .container {
-    color: plum;
+    border-radius: 40px;
+    border: none;
+    background-color: #fd5bac;
     text-align: center;
+    margin: 6%;
+    padding: 6%;
+}
+
+img {
+    border-radius: 10px;
+    border: none;
 }
 
 #button-group {
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 1rem;
     margin-top: 1.5rem;
-    position: relative;
     min-height: 54px;
+    position: relative;
 }
 
 button {
     padding: 15px 30px;
     font-size: 18px;
     font-family: 'Quicksand', sans-serif;
-    font-weight: 500;
+    font-weight: 1000;
     cursor: pointer;
     border-radius: 10px;
     border: none;
-    transition: transform 0.2s;
+    transition: transform 0.3s;
 }
 
 #yesButton {
-    background-color: #ff4d6d;
-    color: white;
+    background-color: #ff9bd9;
+    color: #c1337a;
+    position: relative;
+}
+
+#yesButton:hover {
+    animation: pulse 1s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(2); }
+    100% { transform: scale(1); }
 }
 
 #noButton {
-    background-color: #888;
-    color: white;
-    position: absolute;
-    left: 50%;
-    transform: translate(60px, -50%);
-    top: 50%;
+    background-color: #ff9bd9;
+    color: #c1337a;
+    position: relative;
+    /* Faster transition for a 'snappy' escape */
+    transition: left 0.15s ease-out, top 0.15s ease-out; 
+    z-index: 1000;
+}
+
+#noButton:hover {
+    transform: none;
+}
+
+.heart {
+    position: fixed;
+    top: -10px;
+    user-select: none;
+    pointer-events: none;
+    z-index: -1;
+    animation: fall linear forwards;
+    /* This makes the 💗 pop against the pink background */
+    text-shadow: 0 0 5px rgba(255,255,255,0.5); 
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(105vh) translateX(20px); /* Move down and slightly right */
+        opacity: 0;
+    }
+}
+
+.watermark {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    color: #ff90c7;
+    opacity: 0.7; /* Makes it subtle */
+    z-index: 1001; /* Keeps it above the hearts but behind the runaway button */
+    pointer-events: none; /* User can't accidentally click it */
+}
+
+/* Adjust for mobile if needed */
+@media (max-width: 480px) {
+    .watermark {
+        font-size: 12px;
+        bottom: 10px;
+        right: 10px;
+    }
 }
